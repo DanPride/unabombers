@@ -1,0 +1,9 @@
+To: webhelp@mindspring.com
+From: [youremail]
+Subject: Form Response 
+                  
+
+                     
+Your name:              [yourname]
+Your e-mail address:    [youremail]
+Your favorite color:    [color]

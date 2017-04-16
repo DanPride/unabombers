@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<title>MindSpring Virtual Web Hosting Control Panel</title>
+</head>
+
+<script language="JavaScript">
+
+    var debug = false;
+
+// Simple Browser Detection
+    var isNS = false;
+    var isIE = false;
+
+    if(navigator.appName.indexOf("Netscape") != -1)
+        isNS = true;
+    else if(navigator.appName.indexOf("Microsoft") != -1)
+        isIE = true;
+
+    if(navigator.userAgent.indexOf('X11') != -1){
+        var isX = true;
+        fHeight = 103;
+        if(debug)
+	    alert(navigator.userAgent + '\nisX');
+    } else if (navigator.userAgent.indexOf('Win') != -1){
+        var isWin = true;
+        fHeight = 73;
+        if(debug)
+	    alert(navigator.userAgent + '\nisWin');
+    } else if (navigator.userAgent.indexOf('Mac') != -1){
+        var isMac = true;
+        if(isNS)
+	    fHeight = 74; 
+	else if(isIE)
+	    fHeight = 67;
+        if (debug)
+	    alert(navigator.userAgent + '\nisMac');
+    } else {
+        fHeight = 77;
+        if(debug)
+	    alert('Unknown');
+    }
+
+document.write('<frameset FRAMEBORDER="0" BORDER="0" rows="' + fHeight + ',*">');
+
+</script>
+ 
+   <frame name="header" scrolling="no" noresize target="main" src="top?session_id=ee8503ddd7355537eb636cc2dfc9e69b" marginwidth="0" marginheight="0.">
+   <frame name="main" src="/main.html">
+
+  </noframes>
+</frameset>
+</html>

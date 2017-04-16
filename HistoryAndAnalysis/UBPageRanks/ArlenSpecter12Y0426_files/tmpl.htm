@@ -1,0 +1,90 @@
+ 
+
+
+ 
+
+
+var ON = new Array;
+
+function getOffsetTop(el) 
+{
+    if (el == null) return null;
+    var ot = el.offsetTop;
+    while((el = el.offsetParent) != null)
+        ot += el.offsetTop;
+    return ot;
+}
+
+function getOffsetLeft(el) 
+{
+    if (el == null) return null;
+    var ot = el.offsetLeft;
+    while((el = el.offsetParent) != null)
+        ot += el.offsetLeft;
+    return ot;
+}
+
+function SetObjVisibility (obj, vis)
+{
+    if (document.all)   // IE
+        document.all(obj).style.visibility=vis;
+    else
+        document.layers[obj].visibility=vis;
+}
+
+function switch_on(link, obj)
+{
+    ON[obj] = true;
+
+    SetObjVisibility(obj, "visible");
+
+    if (document.all)
+    {
+        var div = document.all(obj);
+        div.style.top = getOffsetTop(link) - div.offsetHeight + 27;
+
+        // README: make sure that two objects are separated
+        div.style.left = getOffsetLeft(link) - div.offsetWidth - 15;
+    }
+    else
+    {
+        var layer = document.layers[obj];
+        layer.top = link.y - layer.clip.height + 27;
+
+        // README: make sure that two objects are separated
+        layer.left = link.x - layer.clip.width - 15;
+    }
+}
+    
+function switch_off(obj)
+{
+    SetObjVisibility(obj, "hidden");
+}
+
+///////////////
+
+function div_off(obj)
+{
+    ON[obj] = false;
+    var code = "div_off2('" + obj + "')";
+
+    // wait for mouse to move from one object to another
+    setTimeout(code, 300); 
+}
+
+function div_off2(obj)
+{
+   if (ON[obj] && ON[obj] == true)
+       SetObjVisibility(obj, "visible");
+   else
+       SetObjVisibility(obj, "hidden");
+}
+
+function div_on(obj)
+{
+   ON[obj] = true;
+   SetObjVisibility(obj, "visible");
+}
+
+
+document.write('<table border=0 bgcolor="#cccccc" cellpadding=1 cellspacing=0 hspace=2 vspace=2 width=140><tr><td><table border=0 cellpadding=4 cellspacing=0 width="100%"><tr><td align=center bgcolor="#ffffff"><a href="http://rd.yahoo.com/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409/O=1/*http://shop.store.yahoo.com/cgi-bin/clink?barnesandnoble2+shopping:dmad/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409+http://us.rmi.yahoo.com/rmi/http://www.barnesandnoble.com/rmi-framed-url/http://service.bfast.com/booklink/click%3Fsourceid=33022484%26categoryid=homepage"><img src="http://us.a1.yimg.com/us.yimg.com/a/ba/barnesnoble/2477_logo_24.gif" width=120 height=30 ALT="[]" border=0></a></td></tr><tr><td bgcolor="#ffffcc" align=center><small><b>Related Products at BN.com</b></small><br><br><small><a href="http://rd.yahoo.com/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409/O=1/*http://shopping.yahoo.com/shop?d=b&id=1967777227&isbn=0060958103&cf=merch&merch=barnesandnoble2&clink=dmad/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409">Passion for Truth : From ...</a><br><font color=A00000><b>$15.25</b></font></small><table width=100% border=0> </table><hr size=1 noshade width=98%><DIV id="two" style="position:absolute; width:140; visibility:hidden;" onmouseout="div_off(\'two\')" onmouseover="div_on(\'two\')"> <table border=0 bgcolor="#cccccc" cellpadding=1 cellspacing=0 hspace=2 vspace=2 width=140><tr><td><table border=0 cellpadding=4 cellspacing=0 width="100%"><tr><td align=center bgcolor="#ffffcc"><b>Top 5 </b><hr size=1 noshade width=98%><table width="100%" border=0><tr><td width="1%" valign=top>&middot;</td><td valign=top><small><a href="http://rd.yahoo.com/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409/O=1/*http://shopping.yahoo.com/shop?d=b&id=1978984076&cf=merch&merch=barnesandnoble2&clink=dmad/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409">The Healthy Kitchen</a> </small></td></tr><tr><td width="1%" valign=top>&middot;</td><td valign=top><small><a href="http://rd.yahoo.com/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409/O=1/*http://shopping.yahoo.com/shop?d=b&id=1976871450&cf=merch&merch=barnesandnoble2&clink=dmad/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409">The Nanny Diaries</a></small></td></tr> <tr><td width="1%" valign=top>&middot;</td><td valign=top><small><a href="http://rd.yahoo.com/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409/O=1/*http://shopping.yahoo.com/shop?d=b&id=1978984081&cf=merch&merch=barnesandnoble2&clink=dmad/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409">Lucky Man</a></small></td></tr> <tr><td width="1%" valign=top>&middot;</td><td valign=top><small><a href="http://rd.yahoo.com/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409/O=1/*http://shopping.yahoo.com/shop?d=b&id=1978984051&cf=merch&merch=barnesandnoble2&clink=dmad/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409">Fall On Your Knees</a></small></td></tr> <tr><td width="1%" valign=top>&middot;</td><td valign=top><small><a href="http://rd.yahoo.com/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409/O=1/*http://shopping.yahoo.com/shop?d=b&id=1979206337&cf=merch&merch=barnesandnoble2&clink=dmad/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409">Sula</a></small></td></tr></table></td></tr></table></td></tr></table></DIV><table><tr><td width="1%" valign=top>&nbsp;</td><td valign=top><a href="http://rd.yahoo.com/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409/O=1/*http://shop.store.yahoo.com/cgi-bin/clink?barnesandnoble2+shopping:dmad/M=224568.2026778.3500655.1260071/D=ws_us/S=9035784:E/A=1040409+http://us.rmi.yahoo.com/rmi/http://www.barnesandnoble.com/rmi-framed-url/http://service.bfast.com/booklink/click%3Fsourceid=33022484%26categoryid=homepage" onmouseover="switch_on(this,\'two\')" onmouseout="div_off(\'two\')">B&N Topsellers</a></td></tr></table></td></tr></table></td></tr></table>');
