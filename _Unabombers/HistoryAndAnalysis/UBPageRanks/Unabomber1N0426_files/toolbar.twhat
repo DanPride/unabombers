@@ -1,3 +1,0 @@
-document.write("<NOBR> <FONT FACE=\"Verdana,Arial,Helvetica,sans-serif\" COLOR=#FFFFFF SIZE=1 CLASS=\"s1cF\"> Welcome! &nbsp; &nbsp;  </FONT><BR>\n");
-var welcome_message=" Welcome! &nbsp; &nbsp; ";
-
