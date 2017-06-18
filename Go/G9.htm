@@ -90,24 +90,7 @@ TABLE.report TH.rightcolumn {
 
 
 
-<SCRIPT src="G9_files/javascript.js" type=text/javascript><!--
-//--> </SCRIPT>
 
-
-
-<SCRIPT type=text/javascript><!--
-
-      function modifyText(id, text) {
-        if(document.getElementById && text != '') {
-          obj = document.getElementById(id);
-          obj.childNodes[0].data = text;
-        }
-      }
-
-      function filterVisibleURL(text) {
-        return text.replace(/^\s*/, '').replace(/\s*$/, '').replace(/^https?:\/\//, '').replace(/\/.*/, '').replace(/:[0-9]+$/, '');
-      }
-    //--> </SCRIPT>
 
 
 
@@ -121,23 +104,8 @@ TABLE.report TH.rightcolumn {
 
 
 
-<SCRIPT type=text/javascript><!--
 
-          function update_enabled(simple) {
-          var f = document.forms.f;
-          f["timeperiod.simpletimeperiod"].disabled = !simple;
-          f["timeperiod.begin.year"].disabled = simple;
-          f["timeperiod.begin.month"].disabled = simple;
-          f["timeperiod.begin.day"].disabled = simple;
-          f["timeperiod.end.year"].disabled = simple;
-          f["timeperiod.end.month"].disabled = simple;
-          f["timeperiod.end.day"].disabled = simple;
-          }
-        //--> </SCRIPT>
-
-
-
-<META content="Microsoft FrontPage 5.0" name=GENERATOR></HEAD>
+</HEAD>
 
 <BODY>
 
@@ -421,13 +389,6 @@ style="PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 
     <TD><INPUT name=timeperiod.display tabIndex=200 type=submit value="Display Report"> 
 
     </TD></TR></TBODY></TABLE>
-
-<SCRIPT type=text/javascript><!--
-
-                  
-                    update_enabled(true);
-                    
-                //--> </SCRIPT>
 
 </DIV></FORM><BR>
 

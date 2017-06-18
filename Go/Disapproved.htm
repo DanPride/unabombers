@@ -48,44 +48,18 @@ TABLE.report TH.rightcolumn {
 }
 </STYLE>
 
-<SCRIPT src="../Disapproved_files/javascript.js" 
-type=text/javascript><!--
-//--> </SCRIPT>
 
-<SCRIPT type=text/javascript><!--
 
-      function modifyText(id, text) {
-        if(document.getElementById && text != '') {
-          obj = document.getElementById(id);
-          obj.childNodes[0].data = text;
-        }
-      }
 
-      function filterVisibleURL(text) {
-        return text.replace(/^\s*/, '').replace(/\s*$/, '').replace(/^https?:\/\//, '').replace(/\/.*/, '').replace(/:[0-9]+$/, '');
-      }
-    //--> </SCRIPT>
 
 <STYLE type=text/css>FORM {
 	MARGIN: 0px
 }
 </STYLE>
 
-<SCRIPT type=text/javascript><!--
 
-          function update_enabled(simple) {
-          var f = document.forms.f;
-          f["timeperiod.simpletimeperiod"].disabled = !simple;
-          f["timeperiod.begin.year"].disabled = simple;
-          f["timeperiod.begin.month"].disabled = simple;
-          f["timeperiod.begin.day"].disabled = simple;
-          f["timeperiod.end.year"].disabled = simple;
-          f["timeperiod.end.month"].disabled = simple;
-          f["timeperiod.end.day"].disabled = simple;
-          }
-        //--> </SCRIPT>
 
-<META content="Microsoft FrontPage 5.0" name=GENERATOR></HEAD>
+<meta content="Microsoft FrontPage 5.0" name=GENERATOR></HEAD>
 <BODY>
 <FORM action=../main method=get name=f><INPUT name=cmd type=hidden 
 value=CampaignManagement> 
@@ -226,12 +200,7 @@ style="PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 
         value=30>30</OPTION> <OPTION value=31>31</OPTION></SELECT> </DIV></TD>
     <TD><INPUT name=timeperiod.display tabIndex=200 type=submit value="Display Report"> 
     </TD></TR></TBODY></TABLE>
-<SCRIPT type=text/javascript><!--
 
-                  
-                    update_enabled(true);
-                    
-                //--> </SCRIPT>
 </DIV></FORM><BR>
 <DIV 
 style="BACKGROUND-COLOR: #e6f2e6; COLOR: #000000; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px"><STRONG><FONT 
